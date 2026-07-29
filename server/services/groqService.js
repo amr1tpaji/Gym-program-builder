@@ -128,11 +128,12 @@ RESPOND IN THIS EXACT JSON FORMAT (no markdown, no code blocks, just raw JSON):
         }
       ]
     }
+    // ... YOU MUST CONTINUE GENERATING DAY OBJECTS UNTIL YOU HAVE EXACTLY ${daysPerWeek} DAYS IN THIS ARRAY! DO NOT STOP EARLY!
   ],
   "rationale": "A comprehensive 3-5 paragraph explanation of: (1) Why this specific training split was chosen for this client's level and goals, (2) Why the exercise selection is optimal, (3) Why the volume and intensity are set at these levels, (4) What alternative approaches were considered and why they were not chosen, (5) How this program should be progressed over time"
 }
 
-Ensure the program is evidence-based, practical, and appropriately scaled for a ${fitnessLevel} individual. Include at least 3-4 warmup exercises, 2-3 mobility drills, 4-6 strength exercises, and 2-3 cooldown stretches per day.`;
+Ensure the program is evidence-based, practical, and appropriately scaled for a ${fitnessLevel} individual. You MUST generate EXACTLY ${daysPerWeek} day objects in the "days" array. Do not stop at 3 days if more are requested. Include at least 3-4 warmup exercises, 2-3 mobility drills, 4-6 strength exercises, and 2-3 cooldown stretches per day.`;
 
   const completion = await groq.chat.completions.create({
     messages: [
