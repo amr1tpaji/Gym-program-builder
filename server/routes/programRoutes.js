@@ -31,6 +31,15 @@ router.post('/generate', async (req, res) => {
         docs.forEach(doc => {
           knowledgeContext += `\n\n=== FROM: "${doc.fileName}" ===\n${doc.extractedText}`;
         });
+      } else {
+        // Fallback to memory store if testing without DB
+        const memoryKnowledge = req.app.locals.memoryKnowledge; // If we attached it, or we just won't worry about memory for now.
+        // It's better to just skip memory reading here since they are in different modules. 
+      }
+      
+      // CRITICAL FIX: Limit knowledge context size so it doesn't exceed Groq's token limit!
+      if (knowledgeContext.length > 15000) {
+        knowledgeContext = knowledgeContext.substring(0, 15000) + '\n...[CONTENT TRUNCATED DUE TO SIZE LIMIT]';
       }
     } catch (kbErr) {
       console.warn('Could not fetch knowledge base:', kbErr.message);
