@@ -25,6 +25,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Program Builder API is running' });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('🏋️‍♂️ Program Builder API is running successfully on Render!');
+});
+
 // Connect to MongoDB and start server
 const PORT = process.env.PORT || 5000;
 
