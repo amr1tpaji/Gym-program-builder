@@ -35,7 +35,7 @@ CLIENT PROFILE:
 - Session Duration: ${sessionDuration || 60} minutes
 
 REQUIREMENTS:
-1. Create a ${daysPerWeek}-day training program
+1. CRITICAL: You MUST create exactly a ${daysPerWeek}-day training program. The "days" array in your JSON MUST contain exactly ${daysPerWeek} objects. Adapt the knowledge base principles to fit this exact frequency.
 2. Each day MUST include: warmup exercises, mobility drills, strength training exercises
 3. For EVERY exercise, provide the exact muscles trained with both common names AND anatomical names (Latin), and classify each as primary, secondary, or stabilizer
 4. Adjust volume, intensity, and exercise selection based on the "${fitnessLevel}" fitness level
