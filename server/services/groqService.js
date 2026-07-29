@@ -149,7 +149,7 @@ Ensure the program is evidence-based, practical, and appropriately scaled for a 
     ],
     model: 'llama-3.3-70b-versatile',
     temperature: 0.7,
-    max_tokens: 8000,
+    max_tokens: 4000,
     response_format: { type: 'json_object' }
   });
 
@@ -197,7 +197,7 @@ RESPOND ONLY WITH THE COMPLETE UPDATED JSON PROGRAM (same structure as input, no
     ],
     model: 'llama-3.3-70b-versatile',
     temperature: 0.5,
-    max_tokens: 8000,
+    max_tokens: 4000,
     response_format: { type: 'json_object' }
   });
 
